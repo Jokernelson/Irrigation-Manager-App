@@ -15,14 +15,23 @@
                 font-size: 20px;
                 font-weight: bold;
             }
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 400px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+
         </style>
+
     </head>
     <body>
         <div style="text-align: right;">
             <a href="/logout"><button>Logout</button></a>
         </div>
         <div>
-            <h1>Dashboard</h1>
+            <h1>Map</h1>
         </div>
         <div>
             <ul id="menu">
@@ -34,5 +43,9 @@
                 </li>
             </ul>
         </div>
+        <div>
+            <div id="map"></div>
+        </div>
+
     </body>
 </html>
