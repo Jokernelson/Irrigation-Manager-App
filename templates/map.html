@@ -16,14 +16,62 @@
                 font-weight: bold;
             }
             /* Set the size of the div element that contains the map */
-            #map {
-                height: 400px;
-                /* The height is 400 pixels */
-                width: 100%;
-                /* The width is the width of the web page */
+            #mapimage {
+                display: none;
             }
-
         </style>
+        <script>
+            function loadMap(){
+                var c = document.getElementById("map");
+                var ctx = c.getContext("2d");
+                var img = document.getElementById("mapimage");
+                ctx.drawImage(img,10,10);
+                ctx.strokeStyle = '#ffff00';
+                // Field 101
+                ctx.strokeRect(322, 300, 45, 50);
+                // Field 108
+                ctx.strokeRect(368, 300, 45, 38);
+                //Field 109
+                ctx.strokeRect(415, 300, 45, 38);
+                //Field 102
+                ctx.strokeRect(368, 338, 45, 26);
+                //Field 103
+                ctx.strokeRect(415, 338, 45, 26);
+                //Field 110
+                ctx.strokeRect(415, 395, 45, 45);
+                //Field 104
+                ctx.strokeRect(460, 395, 33, 45);
+                //Field 106
+                ctx.strokeRect(492, 395, 13, 45);
+                //Field 105
+                ctx.strokeRect(460, 440, 33, 48);
+                //Field 107
+                ctx.strokeRect(492, 440, 13, 60);
+                //Field 201
+                ctx.strokeRect(273, 489, 45, 50);
+                //Field 202
+                ctx.strokeRect(318, 489, 48, 50);
+                //Field 203
+                ctx.strokeRect(365, 489, 48, 50);
+                //Field 204
+                ctx.strokeRect(413, 489, 47, 50);
+                //Field 304
+                ctx.strokeRect(273, 539, 35, 48);
+                //Field 312
+                ctx.strokeRect(310, 539, 32, 48);
+                //Field 305
+                ctx.strokeRect(340, 539, 30, 48);
+                //Field ??
+                ctx.strokeRect(370, 548, 45, 39);
+                //Field 204
+                ctx.strokeRect(415, 539, 45, 48);
+                ctx.strokeStyle = '#ffffff';
+                ctx.strokeRect(275, 588, 65, 30);
+
+                ctx.stroke();
+            }
+        </script>
+            
 
     </head>
     <body>
@@ -44,7 +92,13 @@
             </ul>
         </div>
         <div>
-            <div id="map"></div>
+            <img src="{{ url_for('static', filename='maps.png') }}" id="mapimage" />
+
+            <p><button onclick="loadMap()">Load Map</button></p>
+
+            <canvas id="map" width="1250" height="1550" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML canvas tag.</canvas>
+
         </div>
 
     </body>
